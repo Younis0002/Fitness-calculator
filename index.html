@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Calculator</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <style>
+        /* Tailwind CSS (minified, embedded) */
+        html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}:root{--tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);--tw-ring-offset-width: 0px;--tw-ring-offset-color: #fff;--tw-ring-color: rgba(59, 130, 246, .5);--tw-ring-offset-shadow: 0 0 #0000;--tw-ring-shadow: 0 0 #0000}.container{width:100%}@media (min-width:640px){.container{max-width:640px}}@media (min-width:768px){.container{max-width:768px}}@media (min-width:1024px){.container{max-width:1024px}}@media (min-width:1280px){.container{max-width:1280px}}@media (min-width:1536px){.container{max-width:1536px}}.mx-auto{margin-left:auto;margin-right:auto}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mt-6{margin-top:1.5rem}.flex{display:flex}.hidden{display:none}.min-h-screen{min-height:100vh}.items-center{align-items:center}.justify-center{justify-content:center}.space-x-2>:not([hidden])~:not([hidden]){--tw-space-x-reverse:0;margin-right:calc(.5rem * var(--tw-space-x-reverse));margin-left:calc(.5rem * calc(1 - var(--tw-space-x-reverse)))}.grid{display:grid}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.gap-6{gap:1.5rem}.rounded{border-radius:.25rem}.rounded-lg{border-radius:.5rem}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.bg-blue-600{--tw-bg-opacity:1;background-color:rgba(37,99,235,var(--tw-bg-opacity))}.bg-green-600{--tw-bg-opacity:1;background-color:rgba(21,128,61,var(--tw-bg-opacity))}.bg-white{--tw-bg-opacity:1;background-color:rgba(255,255,255,var(--tw-bg-opacity))}.bg-gradient-to-br{background-image:linear-gradient(to bottom right,var(--tw-gradient-stops))}.from-blue-100{--tw-gradient-from:#dbeafe;--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to, rgba(219,234,254,0))}.to-green-100{--tw-gradient-to:#dcfce7}.p-2{padding:.5rem}.p-3{padding:.75rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-md{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-2xl{font-size:1.5rem;line-height:2rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.font-medium{font-weight:500}.font-semibold{font-weight:600}.font-extrabold{font-weight:800}.text-gray-600{--tw-text-opacity:1;color:rgba(75,85,99,var(--tw-text-opacity))}.text-gray-700{--tw-text-opacity:1;color:rgba(55,65,81,var(--tw-text-opacity))}.text-gray-800{--tw-text-opacity:1;color:rgba(31,41,55,var(--tw-text-opacity))}.text-blue-600{--tw-text-opacity:1;color:rgba(37,99,235,var(--tw-text-opacity))}.text-green-600{--tw-text-opacity:1;color:rgba(21,128,61,var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgba(255,255,255,var(--tw-text-opacity))}.font-sans{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"}.shadow-lg{--tw-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 10px 10px -5px rgba(0,0,0,.04);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.hover\:bg-blue-700:hover{--tw-bg-opacity:1;background-color:rgba(29,78,216,var(--tw-bg-opacity))}.hover\:bg-green-700:hover{--tw-bg-opacity:1;background-color:rgba(22,101,52,var(--tw-bg-opacity))}.hover\:shadow-xl:hover{--tw-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 10px 10px -5px rgba(0,0,0,.04);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000)}.focus\:ring-blue-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgba(59,130,246,var(--tw-ring-opacity))}@media (min-width:768px){.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+        /* Custom animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        /* Smooth height transition for results */
+        #results, #food-results {
+            transition: height 0.3s ease, opacity 0.3s ease;
+        }
+        /* Hover effect for buttons */
+        button {
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+        /* Input field focus animation */
+        input:focus, select:focus {
+            outline: none;
+            ring: 2px;
+            ring-color: #3b82f6;
+            transition: all 0.2s ease;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-100 to-green-100 font-sans min-h-screen flex items-center justify-center">
+    <div class="container mx-auto p-6 max-w-5xl">
+        <h1 class="text-4xl font-extrabold text-center mb-8 text-gray-800 animate-fadeIn">Fitness Calculator</h1>
+
+        <!-- User Input Form -->
+        <div class="bg-white p-8 rounded-xl shadow-lg mb-8 transform transition-all hover:shadow-xl">
+            <h2 class="text-2xl font-semibold mb-6 text-gray-700">Enter Your Details</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                    <label class="block text-sm font-medium text-gray-600">Height</label>
+                    <div class="flex space-x-2">
+                        <select id="height-unit" class="w-1/3 p-2 border rounded focus:ring-2 focus:ring-blue-500">
+                            <option value="cm">cm</option>
+                            <option value="ft-in">ft/in</option>
+                        </select>
+                        <input id="height-cm" type="number" class="w-2/3 p-2 border rounded focus:ring-2 focus:ring-blue-500" placeholder="e.g., 170">
+                        <div id="height-ft-in" class="hidden flex space-x-2 w-2/3">
+                            <input id="height-ft" type="number" class="w-1/2 p-2 border rounded focus:ring-2 focus:ring-blue-500" placeholder="ft">
+                            <input id="height-in" type="number" class="w-1/2 p-2 border rounded focus:ring-2 focus:ring-blue-500" placeholder="in">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-600">Weight (kg)</label>
+                    <input id="weight" type="number" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" placeholder="e.g., 70">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-600">Age</label>
+                    <input id="age" type="number" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" placeholder="e.g., 30">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-600">Gender</label>
+                    <select id="gender" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-600">Activity Level</label>
+                    <select id="activity" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500">
+                        <option value="1.2">Sedentary (little or no exercise)</option>
+                        <option value="1.375">Lightly Active (light exercise 1-3 days/week)</option>
+                        <option value="1.55">Moderately Active (moderate exercise 3-5 days/week)</option>
+                        <option value="1.725">Very Active (hard exercise 6-7 days/week)</option>
+                        <option value="1.9">Extra Active (very hard exercise & physical job)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-600">Goal</label>
+                    <select id="goal" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500">
+                        <option value="muscle">Gain Muscle</option>
+                        <option value="weight">Lose Weight</option>
+                    </select>
+                </div>
+            </div>
+            <button onclick="calculate()" class="mt-6 w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700">Calculate Fitness Metrics</button>
+        </div>
+
+        <!-- Food Nutrient Calculator -->
+        <div class="bg-white p-8 rounded-xl shadow-lg mb-8 transform transition-all hover:shadow-xl">
+            <h2 class="text-2xl font-semibold mb-6 text-gray-700">Food Nutrient Calculator</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-sm font-medium text-gray-600">Food Item</label>
+                    <select id="food-item" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500">
+                        <option value="chicken_breast">Chicken Breast (cooked)</option>
+                        <option value="brown_rice">Brown Rice (cooked)</option>
+                        <option value="avocado">Avocado</option>
+                        <option value="salmon">Salmon (cooked)</option>
+                        <option value="sweet_potato">Sweet Potato (cooked)</option>
+                        <option value="almonds">Almonds</option>
+                        <option value="pistachios">Pistachios</option>
+                        <option value="cashews">Cashews (Kaju)</option>
+                        <option value="walnuts">Walnuts</option>
+                        <option value="chana">Chana (Roasted)</option>
+                        <option value="daal_chana">Daal Chana (cooked)</option>
+                        <option value="daal_masoor">Daal Masoor (cooked)</option>
+                        <option value="daal_moong">Daal Moong (cooked)</option>
+                        <option value="daal_urad">Daal Urad (cooked)</option>
+                        <option value="lobia">Lobia (Black-eyed Peas, cooked)</option>
+                        <option value="chickpeas">Chickpeas (cooked)</option>
+                        <option value="boiled_rice">Boiled Rice (white)</option>
+                        <option value="beef">Beef (cooked, lean)</option>
+                        <option value="chicken">Chicken (cooked, skinless)</option>
+                        <option value="mutton">Mutton (cooked, lean)</option>
+                        <option value="besan">Besan (Gram Flour, raw)</option>
+                        <option value="peanuts">Peanuts</option>
+                        <option value="potato">Potato (boiled)</option>
+                        <option value="fish">Fish (cooked, average)</option>
+                        <option value="chicken_karahi">Chicken Karahi (cooked)</option>
+                        <option value="roti">Roti (whole wheat)</option>
+                        <option value="paratha">Paratha (plain, with ghee)</option>
+                        <option value="nihari">Nihari (beef)</option>
+                        <option value="apple">Apple</option>
+                        <option value="banana">Banana</option>
+                        <option value="mango">Mango</option>
+                        <option value="orange">Orange</option>
+                        <option value="peach">Peach</option>
+                        <option value="grapes">Grapes</option>
+                        <option value="guava">Guava</option>
+                        <option value="strawberry">Strawberry</option>
+                        <option value="melon">Melon</option>
+                        <option value="watermelon">Watermelon</option>
+                        <option value="chikoo">Chikoo (Sapota)</option>
+                        <option value="cherry">Cherry</option>
+                        <option value="milk">Milk (whole)</option>
+                        <option value="yogurt">Yogurt (plain, full-fat)</option>
+                        <option value="corn">Corn (boiled)</option>
+                        <option value="spinach">Spinach (cooked)</option>
+                        <option value="tea">Tea (with milk, no sugar)</option>
+                        <option value="paneer">Paneer</option>
+                        <option value="dates">Dates (Khajoor)</option>
+                        <option value="peanut_butter">Peanut Butter</option>
+                        <option value="bread">Bread (white)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-600">Amount (grams)</label>
+                    <input id="food-amount" type="number" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" placeholder="e.g., 100">
+                </div>
+            </div>
+            <button onclick="calculateFood()" class="mt-6 w-full bg-green-600 text-white p-3 rounded-lg hover:bg-green-700">Calculate Food Nutrients</button>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results" class="hidden bg-white p-8 rounded-xl shadow-lg mb-8 animate-fadeIn">
+            <h2 class="text-2xl font-semibold mb-6 text-gray-700">Your Fitness Metrics</h2>
+            <div id="bmi" class="mb-6">
+                <h3 class="font-medium text-lg text-gray-800">Body Mass Index (BMI)</h3>
+                <p id="bmi-value" class="text-xl text-blue-600"></p>
+                <p class="text-sm text-gray-600"><strong>What is BMI?</strong> BMI is a measure of body fat based on height and weight. It helps categorize individuals as underweight (<18.5), normal (18.5-24.9), overweight (25-29.9), or obese (≥30). It’s a general guide and doesn’t account for muscle mass or body composition.</p>
+            </div>
+            <div id="calories" class="mb-6">
+                <h3 class="font-medium text-lg text-gray-800">Daily Calorie Needs</h3>
+                <p id="calories-value" class="text-xl text-blue-600"></p>
+                <p class="text-sm text-gray-600"><strong>What are Calorie Needs?</strong> This is the number of calories your body needs daily to maintain, gain, or lose weight, based on your Basal Metabolic Rate (BMR) and activity level. For muscle gain, a surplus is added; for weight loss, a deficit is applied.<br><strong>Sources:</strong> Calorie-rich foods include nuts (e.g., almonds, 576 kcal/100g; cashews, 553 kcal/100g), peanut butter (588 kcal/100g), dates (277 kcal/100g), and paratha (325 kcal/100g). <strong>Alternatives:</strong> If unavailable, use whole grains (e.g., oats, 389 kcal/100g), bread (265 kcal/100g), or bananas (89 kcal/100g).</p>
+            </div>
+            <div id="protein" class="mb-6">
+                <h3 class="font-medium text-lg text-gray-800">Protein Intake</h3>
+                <p id="protein-value" class="text-xl text-blue-600"></p>
+                <p class="text-sm text-gray-600"><strong>What is Protein Intake?</strong> Protein is essential for muscle repair and growth. Recommended intake varies by goal: higher for muscle gain (1.6-2.2g/kg body weight) and moderate for weight loss (1.2-1.8g/kg) to preserve muscle mass.<br><strong>Sources:</strong> High-protein foods include chicken breast (31g/100g), paneer (20g/100g), eggs (13g/100g), and daal chana (9g/100g). <strong>Alternatives:</strong> If unavailable, use lentils (e.g., daal masoor, 9g/100g), chickpeas (9g/100g), or fish (22g/100g).</p>
+            </div>
+            <div id="carbs" class="mb-6">
+                <h3 class="font-medium text-lg text-gray-800">Carbohydrate Intake</h3>
+                <p id="carbs-value" class="text-xl text-blue-600"></p>
+                <p class="text-sm text-gray-600"><strong>What are Carbs?</strong> Carbohydrates provide energy for daily activities and exercise. Muscle gain diets may include 4-7g/kg body weight, while weight loss diets may lower carbs (2-5g/kg) to create a calorie deficit.<br><strong>Sources:</strong> High-carb foods include roti (40g/100g), boiled rice (28g/100g), potatoes (17g/100g), and bananas (23g/100g). <strong>Alternatives:</strong> If unavailable, use bread (49g/100g), corn (19g/100g), or mangoes (15g/100g).</p>
+            </div>
+            <div id="fat" class="mb-6">
+                <h3 class="font-medium text-lg text-gray-800">Fat Intake</h3>
+                <p id="fat-value" class="text-xl text-blue-600"></p>
+                <p class="text-sm text-gray-600"><strong>What is Dietary Fat?</strong> Fats support hormone production and overall health. Aim for 0.5-1g/kg body weight for both goals, adjusted to fit calorie needs.<br><strong>Sources:</strong> Healthy fats include avocados (15g/100g), paneer (20g/100g), peanuts (49g/100g), and paratha with ghee (12g/100g). <strong>Alternatives:</strong> If unavailable, use cashews (44g/100g), walnuts (65g/100g), or yogurt (3.3g/100g).</p>
+            </div>
+        </div>
+
+        <!-- Food Nutrient Results -->
+        <div id="food-results" class="hidden bg-white p-8 rounded-xl shadow-lg animate-fadeIn">
+            <h2 class="text-2xl font-semibold mb-6 text-gray-700">Food Nutrient Breakdown</h2>
+            <div id="food-nutrients" class="mb-6">
+                <p id="food-name" class="text-lg font-medium text-gray-800"></p>
+                <p id="food-calories" class="text-md text-green-600"></p>
+                <p id="food-protein" class="text-md text-green-600"></p>
+                <p id="food-carbs" class="text-md text-green-600"></p>
+                <p id="food-fat" class="text-md text-green-600"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle height input based on unit selection
+        document.getElementById('height-unit').addEventListener('change', function () {
+            const unit = this.value;
+            if (unit === 'cm') {
+                document.getElementById('height-cm').classList.remove('hidden');
+                document.getElementById('height-ft-in').classList.add('hidden');
+            } else {
+                document.getElementById('height-cm').classList.add('hidden');
+                document.getElementById('height-ft-in').classList.remove('hidden');
+            }
+        });
+
+        function calculate() {
+            const heightUnit = document.getElementById('height-unit').value;
+            let height;
+            if (heightUnit === 'cm') {
+                height = parseFloat(document.getElementById('height-cm').value);
+            } else {
+                const feet = parseFloat(document.getElementById('height-ft').value) || 0;
+                const inches = parseFloat(document.getElementById('height-in').value) || 0;
+                height = (feet * 30.48 + inches * 2.54); // Convert ft/in to cm
+            }
+            const weight = parseFloat(document.getElementById('weight').value);
+            const age = parseInt(document.getElementById('age').value);
+            const gender = document.getElementById('gender').value;
+            const activity = parseFloat(document.getElementById('activity').value);
+            const goal = document.getElementById('goal').value;
+
+            if (!height || !weight || !age) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            // BMI Calculation
+            const bmi = (weight / ((height / 100) ** 2)).toFixed(1);
+            let bmiStatus = '';
+            if (bmi < 18.5) bmiStatus = 'Underweight';
+            else if (bmi < 25) bmiStatus = 'Normal';
+            else if (bmi < 30) bmiStatus = 'Overweight';
+            else bmiStatus = 'Obese';
+
+            // BMR Calculation (Mifflin-St Jeor Equation)
+            let bmr;
+            if (gender === 'male') {
+                bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+            } else {
+                bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+            }
+
+            // Total Daily Energy Expenditure (TDEE)
+            let tdee = bmr * activity;
+
+            // Adjust calories based on goal
+            let calories;
+            if (goal === 'muscle') {
+                calories = tdee + 500; // Surplus for muscle gain
+            } else {
+                calories = tdee - 500; // Deficit for weight loss
+            }
+            calories = Math.round(calories);
+
+            // Macronutrient Calculations
+            let protein, carbs, fat;
+            if (goal === 'muscle') {
+                protein = (weight * 2.0).toFixed(0); // 2g/kg for muscle gain
+                carbs = (weight * 5.0).toFixed(0); // 5g/kg for energy
+                fat = (weight * 0.8).toFixed(0); // 0.8g/kg for health
+            } else {
+                protein = (weight * 1.6).toFixed(0); // 1.6g/kg for weight loss
+                carbs = (weight * 3.0).toFixed(0); // 3g/kg for moderate carbs
+                fat = (weight * 0.7).toFixed(0); // 0.7g/kg for health
+            }
+
+            // Display Results
+            document.getElementById('bmi-value').textContent = `${bmi} (${bmiStatus})`;
+            document.getElementById('calories-value').textContent = `${calories} kcal/day`;
+            document.getElementById('protein-value').textContent = `${protein} g/day`;
+            document.getElementById('carbs-value').textContent = `${carbs} g/day`;
+            document.getElementById('fat-value').textContent = `${fat} g/day`;
+            document.getElementById('results').classList.remove('hidden');
+        }
+
+        function calculateFood() {
+            const foodItem = document.getElementById('food-item').value;
+            const amount = parseFloat(document.getElementById('food-amount').value);
+
+            if (!amount || amount <= 0) {
+                alert('Please enter a valid amount in grams.');
+                return;
+            }
+
+            // Nutrient data per 100g
+            const nutrients = {
+                chicken_breast: { name: 'Chicken Breast (cooked)', calories: 165, protein: 31, carbs: 0, fat: 3.6 },
+                brown_rice: { name: 'Brown Rice (cooked)', calories: 123, protein: 2.7, carbs: 23, fat: 0.9 },
+                avocado: { name: 'Avocado', calories: 160, protein: 2, carbs: 8.5, fat: 15 },
+                salmon: { name: 'Salmon (cooked)', calories: 206, protein: 22, carbs: 0, fat: 13 },
+                sweet_potato: { name: 'Sweet Potato (cooked)', calories: 86, protein: 1.6, carbs: 20, fat: 0.1 },
+                almonds: { name: 'Almonds', calories: 576, protein: 21, carbs: 22, fat: 50 },
+                pistachios: { name: 'Pistachios', calories: 560, protein: 20, carbs: 28, fat: 45 },
+                cashews: { name: 'Cashews (Kaju)', calories: 553, protein: 18, carbs: 30, fat: 44 },
+                walnuts: { name: 'Walnuts', calories: 654, protein: 15, carbs: 14, fat: 65 },
+                chana: { name: 'Chana (Roasted)', calories: 369, protein: 15, carbs: 58, fat: 6 },
+                daal_chana: { name: 'Daal Chana (cooked)', calories: 150, protein: 9, carbs: 25, fat: 2.5 },
+                daal_masoor: { name: 'Daal Masoor (cooked)', calories: 116, protein: 9, carbs: 20, fat: 0.4 },
+                daal_moong: { name: 'Daal Moong (cooked)', calories: 105, protein: 7, carbs: 19, fat: 0.4 },
+                daal_urad: { name: 'Daal Urad (cooked)', calories: 105, protein: 8, carbs: 18, fat: 0.5 },
+                lobia: { name: 'Lobia (Black-eyed Peas, cooked)', calories: 116, protein: 8, carbs: 21, fat: 0.5 },
+                chickpeas: { name: 'Chickpeas (cooked)', calories: 164, protein: 9, carbs: 27, fat: 2.6 },
+                boiled_rice: { name: 'Boiled Rice (white)', calories: 130, protein: 2.7, carbs: 28, fat: 0.3 },
+                beef: { name: 'Beef (cooked, lean)', calories: 250, protein: 26, carbs: 0, fat: 15 },
+                chicken: { name: 'Chicken (cooked, skinless)', calories: 165, protein: 31, carbs: 0, fat: 3.6 },
+                mutton: { name: 'Mutton (cooked, lean)', calories: 232, protein: 25, carbs: 0, fat: 14 },
+                besan: { name: 'Besan (Gram Flour, raw)', calories: 387, protein: 22, carbs: 57, fat: 6.7 },
+                peanuts: { name: 'Peanuts', calories: 567, protein: 26, carbs: 16, fat: 49 },
+                potato: { name: 'Potato (boiled)', calories: 77, protein: 2, carbs: 17, fat: 0.1 },
+                fish: { name: 'Fish (cooked, average)', calories: 150, protein: 22, carbs: 0, fat: 6 },
+                chicken_karahi: { name: 'Chicken Karahi (cooked)', calories: 220, protein: 22, carbs: 5, fat: 12 },
+                roti: { name: 'Roti (whole wheat)', calories: 240, protein: 8, carbs: 45, fat: 2 },
+                paratha: { name: 'Paratha (plain, with ghee)', calories: 325, protein: 6, carbs: 45, fat: 12 },
+                nihari: { name: 'Nihari (beef)', calories: 250, protein: 18, carbs: 8, fat: 15 },
+                apple: { name: 'Apple', calories: 52, protein: 0.3, carbs: 14, fat: 0.2 },
+                banana: { name: 'Banana', calories: 89, protein: 1.1, carbs: 23, fat: 0.3 },
+                mango: { name: 'Mango', calories: 60, protein: 0.8, carbs: 15, fat: 0.4 },
+                orange: { name: 'Orange', calories: 47, protein: 0.9, carbs: 12, fat: 0.1 },
+                peach: { name: 'Peach', calories: 39, protein: 0.9, carbs: 10, fat: 0.3 },
+                grapes: { name: 'Grapes', calories: 69, protein: 0.7, carbs: 18, fat: 0.2 },
+                guava: { name: 'Guava', calories: 68, protein: 2.5, carbs: 14, fat: 1 },
+                strawberry: { name: 'Strawberry', calories: 32, protein: 0.7, carbs: 8, fat: 0.3 },
+                melon: { name: 'Melon', calories: 34, protein: 0.8, carbs: 8, fat: 0.2 },
+                watermelon: { name: 'Watermelon', calories: 30, protein: 0.6, carbs: 8, fat: 0.2 },
+                chikoo: { name: 'Chikoo (Sapota)', calories: 83, protein: 0.4, carbs: 20, fat: 1.1 },
+                cherry: { name: 'Cherry', calories: 50, protein: 1, carbs: 12, fat: 0.3 },
+                milk: { name: 'Milk (whole)', calories: 61, protein: 3.2, carbs: 4.8, fat: 3.3 },
+                yogurt: { name: 'Yogurt (plain, full-fat)', calories: 61, protein: 3.5, carbs: 4.7, fat: 3.3 },
+                corn: { name: 'Corn (boiled)', calories: 96, protein: 3.4, carbs: 19, fat: 1.5 },
+                spinach: { name: 'Spinach (cooked)', calories: 23, protein: 3, carbs: 4, fat: 0.4 },
+                tea: { name: 'Tea (with milk, no sugar)', calories: 30, protein: 1, carbs: 4, fat: 1 },
+                paneer: { name: 'Paneer', calories: 265, protein: 20, carbs: 4, fat: 20 },
+                dates: { name: 'Dates (Khajoor)', calories: 277, protein: 2, carbs: 75, fat: 0.2 },
+                peanut_butter: { name: 'Peanut Butter', calories: 588, protein: 25, carbs: 20, fat: 50 },
+                bread: { name: 'Bread (white)', calories: 265, protein: 9, carbs: 49, fat: 3.2 }
+            };
+
+            const food = nutrients[foodItem];
+            const factor = amount / 100;
+            const foodCalories = (food.calories * factor).toFixed(1);
+            const foodProtein = (food.protein * factor).toFixed(1);
+            const foodCarbs = (food.carbs * factor).toFixed(1);
+            const foodFat = (food.fat * factor).toFixed(1);
+
+            // Display Food Results
+            document.getElementById('food-name').textContent = `${food.name} (${amount}g)`;
+            document.getElementById('food-calories').textContent = `Calories: ${foodCalories} kcal`;
+            document.getElementById('food-protein').textContent = `Protein: ${foodProtein} g`;
+            document.getElementById('food-carbs').textContent = `Carbs: ${foodCarbs} g`;
+            document.getElementById('food-fat').textContent = `Fat: ${foodFat} g`;
+            document.getElementById('food-results').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
