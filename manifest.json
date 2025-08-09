@@ -1,0 +1,22 @@
+{
+    "name": "Fitness Calculator",
+    "short_name": "FitCalc",
+    "description": "Calculate BMI, calorie needs, macronutrients, and food nutrients.",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#dbeafe",
+    "theme_color": "#dbeafe",
+    "icons": [
+        {
+            "src": "body-icon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "body-icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "scope": "/"
+}
